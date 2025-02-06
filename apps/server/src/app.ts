@@ -1,5 +1,4 @@
-
-import "dotenv/Config";
+import "dotenv/config";
 import express from "express";
 import prisma from "./configs/prisma";
 
@@ -36,7 +35,6 @@ app.get("/api/v1/users", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
-
 
 app.listen(PORT, () => {
   console.info(`server is listening on port: ${PORT}`);
