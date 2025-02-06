@@ -28,6 +28,8 @@ app.post("/api/v1/users", async (req, res) => {
 
 app.get("/api/v1/users", async (req, res) => {
   try {
+    console.log(process.env.SUPABASE_DATABASE_URL);
+    console.log(process.env.SUPABASE_DIRECT_URL);
     const users = await prisma.user.findMany();
     res.status(200).json(users);
   } catch (error) {

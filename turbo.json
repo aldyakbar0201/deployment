@@ -1,19 +1,19 @@
 {
-    "$schema": "https://turbo.build/schema.json",
-    "ui": "tui",
-    "tasks": {
-      "build": {
-        "dependsOn": ["^build"],
-        "outputs": [".next/**", "!.next/cache/**", "dist/**"]
-      },
-      "dev": {
-        "persistent": true,
-        "cache": false
-      },
-      "start": {
-        "dependsOn": ["build"],
-        "cache": false
-      }
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["SUPABASE_DATABASE_URL", "SUPABASE_DIRECT_URL"],
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+    },
+    "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "cache": false
     }
   }
-  
+}
